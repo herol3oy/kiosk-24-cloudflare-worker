@@ -1,0 +1,18 @@
+#:schema node_modules/wrangler/config-schema.json
+name = "kiosk-24-cloudflare-worker"
+main = "src/index.js"
+compatibility_date = "2024-07-25"
+compatibility_flags = ["nodejs_compat"]
+
+browser = { binding = "MYBROWSER" }
+
+[[kv_namespaces]]
+binding = "KIOSK_24_KV"
+id = "52fa85587185471988a8827904eb2938"
+
+[[kv_namespaces]]
+binding = "KIOSK_24_KV_preview"
+id = "04c156418dfd4489a040d2d9c0118f6a"
+
+[triggers]
+crons = ["0 * * * *"]
